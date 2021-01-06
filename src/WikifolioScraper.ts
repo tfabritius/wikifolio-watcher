@@ -80,9 +80,13 @@ export class WikifolioScraper {
 
     await page.goto(url, { waitUntil: 'load' })
 
-    const id = await page.$eval('button[data-wikifolioid]', (el) =>
-      el.getAttribute('data-wikifolioid'),
+    const metaTagContent = await page.$eval('meta[property="og:image"]', (el) =>
+      el.getAttribute('content'),
     )
+
+    const id = metaTagContent?.match(
+      /[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}/,
+    )?.[0]
     if (!id) {
       throw Error(`WikifolioId not found for symbol: ${symbol}`)
     }
