@@ -6,8 +6,8 @@ Small utility to monitor [wikifolios](https://www.wikifolio.com) for transaction
 
 ### 1. Getting ready
 - `git clone ...`
-- `npm install`
-- `npm run build`
+- `yarn install --frozen-lockfile`
+- `yarn build`
 
 ### 2. Configuration
 - Use environment variables
@@ -22,7 +22,7 @@ Small utility to monitor [wikifolios](https://www.wikifolio.com) for transaction
 
 ### 3. Run `wikifolio-watcher`
 The utility takes one or multiple wikifolio symbols (`wf...`) as command line arguments, e.g.  
-`npm start -- wfabcdef`
+`yarn start wfabcdef`
 
 This will create one file for each wikifolio, e.g. `wikifolio-wfabcdef-transactions.rss`.
 
