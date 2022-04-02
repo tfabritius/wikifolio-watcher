@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "axios": "^0.26.1",
-    "command-line-args": "^5.1.1",
+    "command-line-args": "^5.2.1",
     "debug": "^4.3.4",
     "dotenv": "^10.0.0",
     "feed": "^4.2.2",
